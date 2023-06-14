@@ -1,0 +1,14 @@
+<h2>Product Detail</h2>
+<div>
+  <h3>Product name:</h3>
+  <p>{{ this.product?.productName }}</p>
+  <h3>Product price:</h3>
+  <p>{{ this.product?.price }}</p>
+  <h3>Product quantity:</h3>
+  <p>{{ this.product?.quantity }}</p>
+  <h3>Total price:</h3>
+  <div *ngIf="product">
+    <p>{{ product.price * product.quantity }}</p>
+  </div>
+  <button routerLink="/home">Back to list</button>
+</div>

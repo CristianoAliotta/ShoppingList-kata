@@ -1,0 +1,29 @@
+<form #form="ngForm" (ngSubmit)="newProduct()">
+  <label for="productName">Insert product name</label> <br />
+  <input ngModel type="text" placeholder="Product Name" name="productName" />
+  <label for="productPrice">Insert product name</label> <br />
+  <input
+    ngModel
+    type="number"
+    placeholder="Product Price"
+    name="productPrice"
+  />
+  <label for="productQuantity">Insert product name</label> <br />
+  <input
+    ngModel
+    type="number"
+    placeholder="Product Quantity"
+    name="productQuantity"
+  />
+  <button type="submit">Add</button>
+</form>
+<div>
+  <ul>
+    <li
+      *ngFor="let product of productList"
+      [routerLink]="['/home/', product.productName]"
+    >
+      {{ product.productName }} - {{ product.price }} - {{ product.quantity }}
+    </li>
+  </ul>
+</div>
